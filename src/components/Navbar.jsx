@@ -4,9 +4,9 @@ import {toast} from 'react-toastify'
 
 function Navbar({ isLoggedIn , setIsLoggedIn }) {
 
-  const clickHandler = ()=>{
-   { setIsLoggedIn(true);}
-  }
+  // const clickHandler = ()=>{
+  //  { setIsLoggedIn(true);}
+  // }
 
   return (
     <div className=' flex justify-between px-4 w-10/12 mx-auto pt-4'>

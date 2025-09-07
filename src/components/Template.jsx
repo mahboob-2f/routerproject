@@ -2,7 +2,7 @@ import React from 'react'
 import { LoginForm } from './LoginForm'
 import SignupForm from './SignupForm'
 
-export const Template = ({ title, desc1, desc2, formtype,image }) => {
+export const Template = ({ title, desc1, desc2, formtype,image ,setIsLoggedIn }) => {
     return (
         <>
             <div>
@@ -16,8 +16,8 @@ export const Template = ({ title, desc1, desc2, formtype,image }) => {
                 <div>
                     {
                         formtype === "signup" ?
-                            <SignupForm></SignupForm> :
-                            <LoginForm />
+                            <SignupForm setIsLoggedIn={setIsLoggedIn}></SignupForm> :
+                            <LoginForm  setIsLoggedIn={setIsLoggedIn}/>
                     }
                 </div>
                 <div>
