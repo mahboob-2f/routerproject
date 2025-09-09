@@ -8,6 +8,7 @@ import Dashboard from "./pages/Dashboard"
 import { useState } from "react"
 import About from "./pages/About"
 import { Contact } from "./pages/Contact"
+import PrivateRoute from "./components/PrivateRoute"
 
 
 function App() {
@@ -25,7 +26,11 @@ function App() {
         <Route path="/about" element={<About/>}></Route>
         <Route path="/signup" element={<Signup  setIsLoggedIn={setIsLoggedIn}/>}></Route>
         <Route path="/contact"  element ={<Contact ></Contact>}/>
-        <Route path="/dashboard" element={<Dashboard/>}></Route>
+        <Route path="/dashboard" element={
+            <PrivateRoute isLoggedIn ={isLoggedIn}>
+              <Dashboard/>
+            </PrivateRoute>
+          }></Route>
         <Route path="*" element={<NotFound></NotFound>}></Route>
       </Routes>
 
